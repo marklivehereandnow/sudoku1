@@ -40,11 +40,24 @@ public class Sudoku implements Coordinate, Cloneable {
     }
 
     /**
-     * Sets Sudoku's values by pidckidng up nunbers fron 0 to 9 by sequence.
-     *
-     * @param s
+     * Sets all cells with 0
      */
-    public void setData(String s) {
+    public void init() {
+
+        for (int k = 0; k < member.length; k++) {
+            member[k] = 0;
+        }
+
+    }
+
+/**
+ * Sets Sudoku's values by pidckidng up nunbers fron 0 to 9 by sequence.
+ *
+ * @param s
+ */
+public void setData(String s) {
+        
+        
         int cnt = 0;
 
         for (int k = 0; k < s.length(); k++) {
@@ -443,7 +456,7 @@ public class Sudoku implements Coordinate, Cloneable {
 //
 //    }
     @Override
-    public String toString() {
+        public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= 81; i++) {
             sb.append(member[i]);
